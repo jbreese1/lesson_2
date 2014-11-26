@@ -13,15 +13,14 @@ end
 module Displayable
   include Choice
   def display_moves(p,c)
-    say "#{p.name} you chose: #{CHOICES[p.move]}."
-    say "#{c.name} chose: #{CHOICES[c.move]}"
+    say "#{p} you chose: #{CHOICES[p.move]}."
+    say "#{c} chose: #{CHOICES[c.move]}"
   end
 end
 
 class Game
   include Displayable
   include Sayable
-  include Choice
  
   WINNING_PAIRS = [["P", "R"], ["R", "S"], ["S", "P"]]
   
@@ -65,7 +64,7 @@ class Game
     case 
     when @count >= 1
       say "Your Score: #{p.score}"
-      say "#{c.name}'s Score: #{c.score}"
+      say "#{c}'s Score: #{c.score}"
       if self.ties == 1
         say "There has been #{ties} tie."
       else
