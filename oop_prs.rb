@@ -129,7 +129,7 @@ computer = Computer.new
 
 begin
   on_going_game.display_score(player_1, computer)
-
+  binding.pry
   player_1.make_move_choice
   computer.make_move_choice
 
